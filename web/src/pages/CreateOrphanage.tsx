@@ -76,12 +76,12 @@ export default function CreateOrphanage() {
       open_on_weekends,
       images,
     });
-  
-    await api.post('orphanages', data);
 
-    alert('Orfanato criado com sucesso!')
+    await api.post("orphanages", data);
 
-    history.push('/app')
+    alert("Orfanato criado com sucesso!");
+
+    history.push("/app");
   }
 
   return (
