@@ -9,21 +9,19 @@ export default {
   async index(request: Request, response: Response) {
     const usersRepository = getRepository(User);
 
-    const users = await usersRepository.findOneOrFail();
+    const users = await usersRepository.find();
 
-    return response.json(userView.render(users));
+    return response.json(userView.renderMany(users));
   },
 
-  // async show(request: Request, response: Response) {
-  //   const { id } = request.params;
+  async show(request: Request, response: Response) {
+    const { id } = request.params;
 
-  //   const orphanagesRepository = getRepository(Orphanage);
-  //   const orphanage = await orphanagesRepository.findOneOrFail(id, {
-  //     relations: ["images"],
-  //   });
+    const orphanagesRepository = getRepository(User);
+    const orphanage = await orphanagesRepository.findOneOrFail(id);
 
-  //   return response.json(orphanageView.render(orphanage));
-  // },
+    return response.json(userView.render(orphanage));
+  },
 
   async create(request: Request, response: Response) {
     const { name, email, password_hash } = request.body;

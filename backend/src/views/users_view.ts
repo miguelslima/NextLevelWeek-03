@@ -9,4 +9,8 @@ export default {
       password_hash: user.password_hash,
     };
   },
+
+  renderMany(users: User[]) {
+    return users.map((user) => this.render(user));
+  },
 };
