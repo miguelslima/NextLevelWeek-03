@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import logoImg from "../images/logotipo.svg";
 
 import "../styles/global.css";
-import "../styles/pages/login.css";
+import "../styles/pages/forgotpassword.css";
 
-function Login() {
+function ForgotPassword() {
   return (
     <div id="container">
       <div id="page-login">
@@ -26,19 +26,13 @@ function Login() {
           <FiArrowLeft size={48} color="#15C3D6" />
         </Link>
 
-        <h1>Fazer Login</h1>
+        <h1>Redefinição de senha</h1>
+        <span>Sua redefinição de senha será enviada para o e-mail cadastrado</span>
         <p>E-mail</p>
         <input type="text" />
-        <p>Senha</p>
-        <input type="password" />
-        <div className="forgot-password">
-          <input type="checkbox" name="remember" id="remember" />
-          <span>Lembrar-me</span>
-          <Link to="/forgot">Esqueci minha senha</Link>
-        </div>
         <button>Entrar</button>
       </div>
     </div>
   );
 }
-export default Login;
+export default ForgotPassword;
