@@ -24,7 +24,7 @@ function Landing() {
             <strong>Mossoró</strong>
             <span>Rio Grande do Norte</span>
           </div>
-          <Link to="" className="access-restrict">
+          <Link to="Login" className="access-restrict">
             Acesso restrito
           </Link>
         </div>

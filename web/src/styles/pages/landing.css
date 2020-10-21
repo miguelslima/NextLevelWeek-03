@@ -55,6 +55,25 @@
   text-align: left;
 }
 
+.content-wrapper .location-container .access-restrict {
+  background-color: #12d4e0;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 13px 40px;
+  border-radius: 20px;
+
+  color: #fff;
+  text-decoration: none;
+
+  transition: all 0.4s;
+}
+
+.content-wrapper .location-container .access-restrict:hover {
+  background-color: #96feff;
+  color: #15c3d6;
+}
+
 .content-wrapper .location strong {
   font-weight: 800;
 }
