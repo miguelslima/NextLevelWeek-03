@@ -44,7 +44,9 @@
 }
 
 #container #login-wrapper {
-  padding: 80px 195px;
+  width: 30vw;
+  height: 100vh;
+  padding: 195px 80px;
 }
 
 #container #login-wrapper h1 {
