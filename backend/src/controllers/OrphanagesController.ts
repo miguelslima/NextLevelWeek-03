@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getRepository } from "typeorm";
+import { Any, getRepository } from "typeorm";
 import orphanageView from "../views/orphanages_view";
 import * as Yup from "yup";
 
@@ -11,7 +11,7 @@ export default {
 
     const orphanages = await orphanagesRepository.find({
       relations: ["images"],
-      where: { pending: false },
+      join: "pending"
     });
 
     return response.json(orphanageView.renderMany(orphanages));

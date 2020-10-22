@@ -22,9 +22,9 @@ export default function SidebarDashboard() {
       </div>
 
       <footer>
-        <button type="button" onClick={() => {}}>
+        <Link to="/" onClick={() => {}}>
           <FiPower size={24} color="#FFF" />
-        </button>
+        </Link>
       </footer>
     </aside>
   );
