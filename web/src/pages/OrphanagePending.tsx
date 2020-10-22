@@ -32,12 +32,13 @@ export default function Dashboard() {
     });
   }, []);
 
-  // orphanages.map((orphanage) => {
-  //   if (orphanage.pending === true) {
-  //     console.log("cadastro pendente " + orphanage.name);
-  //     console.log("cadastro pendente " + orphanage.pending);
-  //   }
-  // });
+  let countOrphanages = 0;
+
+  orphanages.map((orphanage) => {
+    if (orphanage.pending === true) {
+      countOrphanages += 1;  
+    }
+  });
 
   return (
     <div id="page-create-orphanage">
@@ -48,7 +49,7 @@ export default function Dashboard() {
           <fieldset>
             <div className="title">
               <legend>Cadastros Pendentes</legend>
-              <span>2 orfanatos</span>
+              <span>{countOrphanages} orfanatos</span>
             </div>
 
             {orphanages.map((orphanage) => {
