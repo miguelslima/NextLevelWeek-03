@@ -1,0 +1,91 @@
+#page-create-orphanage {
+  display: flex;
+}
+
+#page-create-orphanage main {
+  flex: 1;
+}
+
+.dashboard {
+  width: 80vw;
+  margin: 64px auto;
+
+  overflow: hidden;
+}
+
+.dashboard .title {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #d3e2e5;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+}
+
+.leaflet-container {
+  border: 1px solid #d3e2e5;
+  border-radius: 20px;
+}
+
+fieldset {
+  border: 0;
+}
+
+fieldset + fieldset {
+  margin-top: 80px;
+}
+
+fieldset span {
+  font-size: 16px;
+  line-height: 22px;
+  color: #5c8599;
+  font-weight: 600;
+}
+
+fieldset legend {
+  font-size: 32px;
+  line-height: 34px;
+  color: #5c8599;
+  font-weight: 700;
+}
+
+#page-create-orphanage .dashboard .card-orphanage {
+  width: 545px;
+
+  background-color: #fff;
+
+  display: inline-block;
+
+  margin: 10px 100px;
+  border-radius: 20px;
+}
+
+#page-create-orphanage .dashboard .card-orphanage .card-orphanage-details {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  margin: 24px 32px;
+}
+
+#page-create-orphanage .dashboard .card-orphanage h2 {
+  color: #4d6f8d;
+
+  padding-right: 100px;
+}
+
+#page-create-orphanage .dashboard .card-orphanage button {
+  border: none;
+  outline: inherit;
+  color: #4d6f8d;
+  background-color: #ebf2f5;
+
+  padding: 12px;
+  border-radius: 16px;
+  margin: 0 5px;
+}

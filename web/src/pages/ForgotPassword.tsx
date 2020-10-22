@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { FiArrowLeft } from "react-icons/fi";
+import { FiArrowLeft, FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import logoImg from "../images/logotipo.svg";
@@ -9,7 +9,7 @@ import "../styles/global.css";
 import "../styles/pages/forgotpassword.css";
 
 function ForgotPassword() {
-  const [emailPreenchido, setEmailPreenchido] = useState(false);
+  const [emailPreenchido, setEmailPreenchido] = useState(true);
 
   function handleTest() {
     setEmailPreenchido(!emailPreenchido);
@@ -30,7 +30,7 @@ function ForgotPassword() {
             </div>
           </div>
           <div id="forgot-wrapper">
-            <Link to="/login" className="back-home">
+            <Link to="forgot" className="back-home" onClick={handleTest}>
               <FiArrowLeft size={48} color="#15C3D6" />
             </Link>
 
@@ -40,6 +40,7 @@ function ForgotPassword() {
             </span>
             <p>Nova senha</p>
             <input type="password" />
+
             <p>Repetir senha</p>
             <input type="password" />
             <button onClick={handleTest}>Entrar</button>
