@@ -92,7 +92,7 @@ export default function Dashboard() {
         <div className="dashboard">
           <fieldset>
             <div className="title">
-              <legend>Orfanatos cadastrados</legend>
+              <legend>Orfanatos Pendentes</legend>
               <span>2 orfanatos</span>
             </div>
 

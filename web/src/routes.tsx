@@ -8,6 +8,7 @@ import CreateOrphanage from "./pages/CreateOrphanage";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./pages/Dashboard";
+import OrphanagePending from "./pages/OrphanagePending";
 
 function Routes() {
   return (
@@ -18,6 +19,7 @@ function Routes() {
         <Route path="/login" exact component={Login} />
         <Route path="/forgot" exact component={ForgotPassword} />
         <Route path="/dashboard" exact component={Dashboard} />
+        <Route path="/orphanage-pending" exact component={OrphanagePending} />
         <Route path="/orphanages/create" exact component={CreateOrphanage} />
         <Route path="/orphanages/:id" exact component={Orphanage} />
       </Switch>

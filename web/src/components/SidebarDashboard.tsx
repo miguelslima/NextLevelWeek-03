@@ -1,6 +1,6 @@
 import React from "react";
 import { FiPower, FiMapPin, FiAlertCircle } from "react-icons/fi";
-import { useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import mapMarkerImg from "../images/map-marker.svg";
 
 import "../styles/components/SidebarDashboard.css";
@@ -13,12 +13,12 @@ export default function SidebarDashboard() {
       <img src={mapMarkerImg} alt="Happy" />
 
       <div>
-        <button type="button" onClick={() => {}}>
+        <NavLink to="/dashboard" activeStyle={{background: "#FFD666"}}>
           <FiMapPin size={24} color="#FFF" />
-        </button>
-        <button type="button" onClick={() => {}}>
+        </NavLink>
+        <NavLink to="/orphanage-pending" activeStyle={{background: "#FFD666"}}>
           <FiAlertCircle size={24} color="#FFF" />
-        </button>
+        </NavLink>
       </div>
 
       <footer>
