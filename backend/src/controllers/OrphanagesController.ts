@@ -11,6 +11,7 @@ export default {
 
     const orphanages = await orphanagesRepository.find({
       relations: ["images"],
+      where: { pending: false },
     });
 
     return response.json(orphanageView.renderMany(orphanages));
@@ -20,6 +21,7 @@ export default {
     const { id } = request.params;
 
     const orphanagesRepository = getRepository(Orphanage);
+
     const orphanage = await orphanagesRepository.findOneOrFail(id, {
       relations: ["images"],
     });
@@ -36,6 +38,7 @@ export default {
       instructions,
       opening_hours,
       open_on_weekends,
+      pending,
     } = request.body;
 
     const orphanagesRepository = getRepository(Orphanage);
@@ -53,6 +56,7 @@ export default {
       instructions,
       opening_hours,
       open_on_weekends: open_on_weekends === "true",
+      pending: pending === "true",
       images,
     };
 
@@ -64,6 +68,7 @@ export default {
       instructions: Yup.string().required(),
       opening_hours: Yup.string().required(),
       open_on_weekends: Yup.boolean().required(),
+      pending: Yup.boolean().required(),
       images: Yup.array(
         Yup.object().shape({
           path: Yup.string().required(),
@@ -76,7 +81,6 @@ export default {
     });
 
     const orphanage = orphanagesRepository.create(data);
-
     await orphanagesRepository.save(orphanage);
 
     return response.status(201).json(orphanage);

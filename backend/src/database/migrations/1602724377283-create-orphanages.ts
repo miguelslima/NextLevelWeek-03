@@ -47,6 +47,11 @@ export class createOrphanages1602724377283 implements MigrationInterface {
             type: "boolean",
             default: false,
           },
+          {
+            name: "pending",
+            type: "boolean",
+            default: true,
+          },
         ],
       })
     );
