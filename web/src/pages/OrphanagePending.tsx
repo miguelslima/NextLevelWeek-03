@@ -36,7 +36,7 @@ export default function Dashboard() {
 
   orphanages.map((orphanage) => {
     if (orphanage.pending === true) {
-      countOrphanages += 1;  
+      countOrphanages += 1;
     }
   });
 
@@ -49,7 +49,9 @@ export default function Dashboard() {
           <fieldset>
             <div className="title">
               <legend>Cadastros Pendentes</legend>
-              <span>{countOrphanages} orfanatos</span>
+              <span>
+                {countOrphanages === 0 ? "" : countOrphanages + " Orfanatos"}
+              </span>
             </div>
 
             {orphanages.map((orphanage) => {
@@ -84,6 +86,12 @@ export default function Dashboard() {
                 );
               }
             })}
+            {/* {console.log(orphanages.length)}
+            {orphanages.length > 0 ? (
+              <h1>Teste</h1>
+            ) : (
+              <h2>Teste 2</h2>
+            ) } */}
           </fieldset>
         </div>
       </main>

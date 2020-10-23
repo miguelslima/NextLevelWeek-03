@@ -11,7 +11,6 @@ export default {
 
     const orphanages = await orphanagesRepository.find({
       relations: ["images"],
-      join: "pending"
     });
 
     return response.json(orphanageView.renderMany(orphanages));
@@ -28,6 +27,22 @@ export default {
 
     return response.json(orphanageView.render(orphanage));
   },
+
+  // async edit(request: Request, response: Response) {
+  //   const { id } = request.params;
+  //   const {pending} = request.body;
+
+  //   const orphanagesRepository = getRepository(Orphanage);
+
+  //   const orphanage = await orphanagesRepository.find({
+  //     name,
+  //     pending,
+  //   });
+  //   console.log(request.body)
+
+  //   return response.json(orphanageView.render(orphanage));
+
+  // },
 
   async create(request: Request, response: Response) {
     const {

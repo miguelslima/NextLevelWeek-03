@@ -6,7 +6,7 @@
   justify-content: space-evenly;
   align-items: center;
 
-  background: linear-gradient(329.54deg, #FF669D 0%, #D6487B 100%);
+  background: linear-gradient(329.54deg, #ff669d 0%, #d6487b 100%);
 }
 
 #page-success .content-wrapper {
@@ -24,7 +24,7 @@
 }
 
 #page-success .content-wrapper main {
-  max-width: 390px;
+  max-width: 291px;
   text-align: center;
 }
 
@@ -43,7 +43,7 @@
   width: 245px;
   height: 65px;
 
-  background: #D6487B;
+  background: #d6487b;
   border-radius: 30px;
 
   display: flex;
@@ -56,5 +56,5 @@
 }
 
 .content-wrapper .access-map:hover {
-  background: #3bd689;
+  background: #DF6490;
 }
