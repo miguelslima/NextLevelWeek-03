@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import OrphanagesMap from "./pages/OrphanagesMap";
 import Orphanage from "./pages/Orphanage";
 import CreateOrphanage from "./pages/CreateOrphanage";
+import EditOrphanage from './pages/EditOrphanage'
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./pages/Dashboard";
@@ -25,6 +26,7 @@ function Routes() {
         <Route path="/delete" exact component={Delete} />
         <Route path="/orphanage-pending" exact component={OrphanagePending} />
         <Route path="/orphanages/create" exact component={CreateOrphanage} />
+        <Route path="/orphanages/edit/:id" exact component={EditOrphanage} />
         <Route path="/orphanages/:id" exact component={Orphanage} />
       </Switch>
     </BrowserRouter>
