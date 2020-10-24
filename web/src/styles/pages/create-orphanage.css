@@ -6,6 +6,17 @@
   flex: 1;
 }
 
+#page-create-orphanage main span {
+  display: flex;
+
+  margin-top: 40px;
+
+  font-size: 18px;
+  justify-content: center;
+  color: #8FA7B2;
+}
+
+
 form.create-orphanage-form {
   width: 700px;
   margin: 64px auto;
@@ -161,6 +172,8 @@ form.create-orphanage-form button.confirm-button {
   align-items: center;
 
   transition: background-color 0.2s;
+
+  
 }
 
 form.create-orphanage-form button.confirm-button svg {

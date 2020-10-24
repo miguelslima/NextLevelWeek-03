@@ -92,7 +92,8 @@ form.create-orphanage-form .input-block .images-container {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 16px;
 
-  border: inherit;
+  border: none;
+  outline: inherit;
 }
 
 form.create-orphanage-form .input-block .images-container img {
@@ -101,8 +102,13 @@ form.create-orphanage-form .input-block .images-container img {
   object-fit: cover;
   border-radius: 20px;
 
-  border: inherit;
-  text-decoration: inherit;
+  border: none;
+  outline: inherit;
+}
+
+form.create-orphanage-form .input-block .images-container button {
+  border: none;
+  outline: inherit;
 }
 
 form.create-orphanage-form .input-block .images-container .new-image {
@@ -119,11 +125,13 @@ form.create-orphanage-form .input-block .images-container .new-image {
 
 form.create-orphanage-form .input-block input[type=file] {
   display: none;
+
 }
 
 form.create-orphanage-form .input-block .button-select {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  outline: inherit;
 }
 
 form.create-orphanage-form .input-block .button-select button {
@@ -132,6 +140,9 @@ form.create-orphanage-form .input-block .button-select button {
   border: 1px solid #d3e2e5;
   color: #5c8599;
   cursor: pointer;
+  outline: inherit;
+
+  
 }
 
 form.create-orphanage-form .input-block .button-select button.active {

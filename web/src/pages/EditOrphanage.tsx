@@ -122,6 +122,7 @@ export default function EditOrphanage() {
       <Sidebar />
 
       <main>
+        <span>Editar perfil de {orphanage.name}</span>
         <form onSubmit={handleSubmit} className="create-orphanage-form">
           <fieldset>
             <legend>Dados</legend>
