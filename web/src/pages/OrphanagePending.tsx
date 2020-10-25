@@ -4,6 +4,7 @@ import { Map, Marker, TileLayer } from "react-leaflet";
 import { FiEdit, FiTrash } from "react-icons/fi";
 
 import "../styles/pages/dashboard.css";
+
 import mapIcon from "../utils/mapIcon";
 import api from "../services/api";
 import SidebarDashboard from "../components/SidebarDashboard";

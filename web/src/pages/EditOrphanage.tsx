@@ -238,9 +238,20 @@ export default function EditOrphanage() {
             </div>
           </fieldset>
 
-          <button className="confirm-button" type="submit">
-            Confirmar
-          </button>
+          {orphanage.pending === true ? (
+            <button className="confirm-button" type="submit">
+              Confirmar
+            </button>
+          ) : (
+            <div className="edit-button-div">
+              <button className="recuse-button" type="submit">
+                Recusar
+              </button>
+              <button className="acceppt-button" type="submit">
+                Aceitar
+              </button>
+            </div>
+          )}
         </form>
       </main>
     </div>

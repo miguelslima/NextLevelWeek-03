@@ -179,6 +179,52 @@ form.create-orphanage-form button.confirm-button {
   transition: background-color 0.2s;
 }
 
+form.create-orphanage-form .edit-button-div {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+form.create-orphanage-form button.recuse-button {
+  margin-top: 64px;
+
+  width: 48%;
+  height: 64px;
+  border: 0;
+  cursor: pointer;
+  background: #FF669D;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 800;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.2s;
+}
+
+form.create-orphanage-form button.acceppt-button {
+  margin-top: 64px;
+
+  width: 48%;
+  height: 64px;
+  border: 0;
+  cursor: pointer;
+  background: #3CDC8C;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 800;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.2s;
+}
+
 form.create-orphanage-form button.confirm-button svg {
   margin-right: 16px;
 }
