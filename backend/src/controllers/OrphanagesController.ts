@@ -28,21 +28,19 @@ export default {
     return response.json(orphanageView.render(orphanage));
   },
 
-  // async edit(request: Request, response: Response) {
-  //   const { id } = request.params;
-  //   const {pending} = request.body;
+  async edit(request: Request, response: Response) {
+    const { id } = request.params;
+    const { pending } = request.body;
 
-  //   const orphanagesRepository = getRepository(Orphanage);
+    const orphanagesRepository = getRepository(Orphanage);
 
-  //   const orphanage = await orphanagesRepository.find({
-  //     name,
-  //     pending,
-  //   });
-  //   console.log(request.body)
+    let orphanage = await orphanagesRepository.findOne(id);
 
-  //   return response.json(orphanageView.render(orphanage));
+    orphanage?.pending = pending;
+    await orphanagesRepository.save(orphanage);
 
-  // },
+    return response.json({ message: `ok` });
+  },
 
   async create(request: Request, response: Response) {
     const {
