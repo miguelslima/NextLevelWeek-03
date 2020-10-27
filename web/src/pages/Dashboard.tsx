@@ -7,8 +7,10 @@ import "../styles/pages/dashboard.css";
 import mapIcon from "../utils/mapIcon";
 import api from "../services/api";
 import SidebarDashboard from "../components/SidebarDashboard";
+import { Link, useParams } from "react-router-dom";
 
 interface Orphanage {
+  id: number;
   latitude: number;
   longitude: number;
   name: string;
@@ -23,14 +25,26 @@ interface Orphanage {
   }>;
 }
 
+interface OrphanageParams {
+  id: string;
+}
+
 export default function Dashboard() {
+  const params = useParams<OrphanageParams>();
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+  const [orphanage, setOrphanage] = useState<Orphanage>();
 
   useEffect(() => {
     api.get("orphanages").then((response) => {
       setOrphanages(response.data);
     });
   }, []);
+
+  useEffect(() => {
+    api.get(`orphanages/${params.id}`).then((response) => {
+      setOrphanage(response.data);
+    });
+  }, [params.id]);
 
   let countOrphanages = 0;
 
@@ -73,12 +87,17 @@ export default function Dashboard() {
                     <div className="card-orphanage-details">
                       <h2>{orphanage.name}</h2>
 
-                      <button className="edit-orphanage">
-                        <FiEdit size={20} color="#15C3D6" />
-                      </button>
-                      <button className="delete-orphanage">
-                        <FiTrash size={20} color="#15C3D6" />
-                      </button>
+                      <Link to={`/orphanages/edit/${orphanage.id}`}>
+                        <button className="edit-orphanage">
+                          <FiEdit size={20} color="#15C3D6" />
+                        </button>
+                      </Link>
+
+                      <Link to="delete">
+                        <button className="delete-orphanage">
+                          <FiTrash size={20} color="#15C3D6" />
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 );

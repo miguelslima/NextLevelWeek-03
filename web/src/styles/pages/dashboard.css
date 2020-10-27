@@ -67,7 +67,7 @@ fieldset legend {
 #page-create-orphanage .dashboard .card-orphanage .card-orphanage-details {
   display: flex;
   flex-direction: row;
-
+  justify-content: center;
   align-items: center;
 
   margin: 24px 32px;

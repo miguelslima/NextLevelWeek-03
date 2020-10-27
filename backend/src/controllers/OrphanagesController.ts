@@ -28,20 +28,6 @@ export default {
     return response.json(orphanageView.render(orphanage));
   },
 
-  async edit(request: Request, response: Response) {
-    const { id } = request.params;
-    const { pending } = request.body;
-
-    const orphanagesRepository = getRepository(Orphanage);
-
-    let orphanage = await orphanagesRepository.findOne(id);
-
-    orphanage?.pending = pending;
-    await orphanagesRepository.save(orphanage);
-
-    return response.json({ message: `ok` });
-  },
-
   async create(request: Request, response: Response) {
     const {
       name,
@@ -97,5 +83,31 @@ export default {
     await orphanagesRepository.save(orphanage);
 
     return response.status(201).json(orphanage);
+  },
+
+  async edit(request: Request, response: Response) {
+    const { id } = request.params;
+    const { pending } = request.body;
+
+    const orphanagesRepository = getRepository(Orphanage);
+
+    let orphanage = await orphanagesRepository.findOne(id);
+
+    orphanage?.pending = pending || undefined;
+    await orphanagesRepository.save(orphanage);
+
+    return response.json({ message: `ok` });
+  },
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const orphanagesRepository = getRepository(Orphanage);
+
+    let orphanage = await orphanagesRepository.findOne(id);
+
+    await orphanagesRepository.remove(orphanage);
+
+    return response.json({ message: `ok` });
   },
 };
